@@ -1,0 +1,48 @@
+<!-- VISTA FINAL CON ESTILO -->
+<div *ngIf="invitacion" class="invitacion-contenedor" id="invitacion-pdf">
+
+  <div
+    class="invitacion"
+    [ngClass]="invitacion.temaColor"
+    [ngStyle]="obtenerEstiloFondo()"
+  >
+    <h2 class="nombre">Hola, soy {{ invitacion.nombre }}</h2>
+
+    <div class="imagen">
+      <img *ngIf="imagenPreview" [src]="imagenPreview" alt="Imagen personalizada" />
+    </div>
+
+    <p class="texto">Te invito a celebrar en:</p>
+
+    <div class="salon">{{ invitacion.salon }}</div>
+
+    <div class="datos">
+      <p>{{ invitacion.dia }}</p>
+      <p>{{ invitacion.hora }} a {{ invitacion.horaHasta }}</p>
+      <p>{{ invitacion.direccion }}</p>
+    </div>
+
+    <div class="confirmacion" style="font-weight: bold;">
+      No te olvides de confirmar tu asistencia al: {{ invitacion.telefono }}
+    </div>
+  </div>
+
+  <div class="botones-finales">
+    <button class="boton-accion" (click)="enviarPorWhatsapp()">
+  <i class="fab fa-whatsapp"></i> WhatsApp
+</button>
+<button class="boton-accion" (click)="enviarPorGmail()">
+  <i class="fas fa-envelope"></i> Gmail
+</button>
+
+  <button class="boton-accion" (click)="imprimir()">
+    📄 Imprimir
+  </button>
+  <button class="boton-accion" (click)="descargarPDF()">
+    📥 Descargar como PDF
+  </button>
+  
+</div>
+
+
+</div>

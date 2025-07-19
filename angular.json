@@ -29,7 +29,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              {
+                  "glob": "**/*",
+                  "input": "src/assets",
+                  "output": "assets"
+                }
             ],
             "styles": [
               "src/styles.scss"
@@ -103,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "eb61dd47-0364-415c-acd8-b39d10100c45"
   }
 }

@@ -1,0 +1,309 @@
+.formulario {
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invitacion-contenedor {
+  background-color: rgb(252, 251, 251);
+}
+
+.formulario {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fdfcfc;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario input,
+.formulario select,
+.formulario input[type="file"] {
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.formulario label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  display: block;
+}
+
+
+/* Centrar el botón */
+.formulario button {
+  align-self: center;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.formulario button:hover {
+  background-color: #0056b3;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+p{
+  font-size: 20px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .invitacion-contenedor, .invitacion-contenedor * {
+    visibility: visible;
+  }
+
+  .acciones {
+    display: none;
+  }
+
+  .invitacion-contenedor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .formulario {
+    max-width: 100%;
+    background-color: #f5f1f1ea;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .formulario h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario input[type="file"] {
+    font-size: 13px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
+
+  .formulario label {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .formulario button {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .error {
+    font-size: 11px;
+    margin-top: -6px;
+    margin-bottom: 8px;
+  }
+}
+.invitacion-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invitacion {
+  width: 400px;
+  border: 4px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+.invitacion.rosa {
+  background-color: #f9d4d0; /* rosa coral claro */
+  color: #5e2b2b;
+  border-color: #e28a86;
+}
+
+.invitacion.rosa .salon,
+.invitacion.rosa .confirmacion {
+  border-color: #e28a86;
+  color: #5e2b2b;
+}
+
+.invitacion.celeste {
+  background-color: #d7eafc; /* celeste suave elegante */
+  color: #2d3e50;
+  border-color: #9bc3e7;
+}
+
+.invitacion.celeste .salon,
+.invitacion.celeste .confirmacion {
+  border-color: #9bc3e7;
+  color: #2d3e50;
+}
+
+
+.invitacion.beige {
+  background-color: #f5f3ea;
+  border-color: #d6cbb2;
+  color: #4d4d4d;
+}
+.invitacion.oscuro {
+  background-color: #121212;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.invitacion.oscuro .salon,
+.invitacion.oscuro .confirmacion {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.nombre {
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.texto,
+.datos,
+.confirmacion {
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.imagen img {
+  width: 230px;         /* asegurate de que ancho y alto sean iguales */
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;   /* 👈 esto la hace redonda */
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.salon {
+  
+  padding: 10px;
+  display: inline-block;
+  font-weight: bold;
+  margin: 8px 0;
+  margin-top: 0.5px;
+  font-size: 36px;
+  font-family: 'Dancing Script', cursive;
+
+}
+
+.datos p {
+  margin: 3px 0;
+}
+
+.confirmacion {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .invitacion {
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0 10px;
+  }
+
+  .nombre {
+    font-size: 32px;
+  }
+
+  .salon {
+    font-size: 28px;
+  }
+
+  .confirmacion {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .imagen img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .acciones {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.acciones button {
+  flex: 1;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.acciones button:hover {
+  background-color: #0056b3;
+}
+
+
+  p {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+

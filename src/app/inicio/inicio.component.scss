@@ -1,0 +1,126 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Luckiest Guy', cursive;;
+}
+body {
+  margin: 40px auto;
+  padding: 0;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pantalla-inicial {
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: #1f2a44; /* azul oscuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Contenedor de contenido */
+.contenedor-central {
+  width: 100%;
+  text-align: center;
+}
+
+.titulo {
+  font-family: 'Lobster', cursive;
+  font-size: 2.8rem;
+  color: #ffb84d;
+  text-align: center;
+  text-shadow:
+    2px 2px 3px #000,
+    0 0 10px #ffcc80,
+    0 0 8px #ffaa00;
+  margin-bottom: 40px;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+
+
+/* Botón redondo tipo "CANDY" */
+.boton-comenzar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ff914d;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  font-family: 'Luckiest Guy', cursive;
+  text-shadow: 2px 2px 0 #00000099, 1px 1px 6px #ffffffaa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 40px;
+}
+
+.boton-comenzar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.mail-contacto {
+  display: block;
+  text-align: center;
+  color: #ff914d; /* naranja como el botón */
+  font-weight: bold;
+  text-decoration: none;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+@keyframes flotar {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+
+@media screen and (max-width: 480px) {
+  .pantalla-inicial {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .contenedor-central h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .boton-comenzar {
+  width: 150px;
+  height: 150px;
+  font-size: 1rem;
+  border-radius: 50%;
+  padding: 0;
+  margin-top: 40px;
+  font-size: 20px;
+}
+.mail-contacto {
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  
+
+}
+

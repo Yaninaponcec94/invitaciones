@@ -1,0 +1,195 @@
+<div *ngIf="modo === 'edicion'" class="formulario">
+  <form [formGroup]="invitacionForm" class="form-box">
+    <h2>Crear Invitación</h2>
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="nombre"
+        placeholder="Nombre del agasajado"
+        [class.invalido]="esCampoInvalido('nombre')"
+        pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+        title="Solo letras"
+      />
+      <div class="error" *ngIf="esCampoInvalido('nombre')">
+        El nombre es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="file" (change)="onFileSelected($event)" />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="salon"
+        placeholder="Nombre del salón"
+        [class.invalido]="esCampoInvalido('salon')"
+      />
+      <div class="error" *ngIf="esCampoInvalido('salon')">
+        El nombre del salón es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="date"
+        formControlName="dia"
+        [class.invalido]="esCampoInvalido('dia')"
+      />
+      <div class="error" *ngIf="esCampoInvalido('dia')">
+        Elegir un día es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Desde:</label>
+      <input
+        type="time"
+        formControlName="hora"
+        [class.invalido]="esCampoInvalido('hora')"
+      />
+      <div class="error" *ngIf="esCampoInvalido('hora')">
+        El horario es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Hasta:</label>
+      <input
+        type="time"
+        formControlName="horaHasta"
+        [class.invalido]="esCampoInvalido('horaHasta')"
+      />
+      <div class="error" *ngIf="esCampoInvalido('horaHasta')">
+        Indicar a qué hora termina es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="direccion"
+        placeholder="Dirección"
+        [class.invalido]="esCampoInvalido('direccion')"
+      />
+      <div class="error" *ngIf="esCampoInvalido('direccion')">
+        Indicar la dirección es obligatorio
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="telefono"
+        placeholder="Teléfono de confirmación"
+        [class.invalido]="esCampoInvalido('telefono')"
+        pattern="[0-9]+"
+        title="Solo números"
+      />
+      <div class="error" *ngIf="esCampoInvalido('telefono')">
+        Indicar un número de teléfono es obligatorio – solo números
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="temaColor">Elegí un tema:</label>
+      <select formControlName="temaColor" id="temaColor">
+        <option value="rosa">Rosa</option>
+        <option value="celeste">Celeste</option>
+        <option value="beige">Beige</option>
+        <option value="dibujitos">Dibujitos animados</option>
+        <option value="oscuro">Negro</option>
+      </select>
+    </div>
+
+    <!-- Mostrar select de fondo según el tema -->
+    <ng-container [ngSwitch]="invitacionForm.get('temaColor')?.value">
+
+      <ng-container *ngSwitchCase="'rosa'">
+        <div class="form-group">
+          <label for="fondoRosa">Elegí un fondo rosa:</label>
+          <select formControlName="fondoRosa" id="fondoRosa">
+            <option value="fondo.png">Fondo 1</option>
+            <option value="fondo1.jpg">Fondo 2</option>
+            <option value="fondo2.jpg">Fondo 3</option>
+          </select>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'celeste'">
+        <div class="form-group">
+          <label for="fondoCeleste">Elegí un fondo celeste:</label>
+          <select formControlName="fondoCeleste" id="fondoCeleste">
+            <option value="fondoceleste.jpg">Fondo 1</option>
+            <option value="fondoceleste1.jpg">Fondo 2</option>
+            <option value="fondoceleste2.jpg">Fondo 3</option>
+          </select>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'beige'">
+        <div class="form-group">
+          <label for="fondoBeige">Elegí un fondo beige:</label>
+          <select formControlName="fondoBeige" id="fondoBeige">
+            <option value="fondobeige.jpg">Fondo 1</option>
+            <option value="fondobeige1.jpg">Fondo 2</option>
+            <option value="fondobeige2.jpg">Fondo 3</option>
+          </select>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'dibujitos'">
+        <div class="form-group">
+          <label for="fondoDibujitos">Elegí un fondo beige:</label>
+          <select formControlName="fondoDibujitos" id="fondoDibujitos">
+            <option value="dinosaurio.png">Dinosaurio</option>
+            <option value="toystory.jpg">Toy story</option>
+            <option value="pawpatrol.png">Paw patrol</option>
+            <option value="granjazenon.png">Granja zenon</option>
+          </select>
+        </div>
+      </ng-container>
+
+    </ng-container>
+
+    <button (click)="irAPreview()">Previsualizar invitación</button>
+  </form>
+</div>
+
+<!-- PREVISUALIZACIÓN -->
+<div *ngIf="modo === 'preview'" class="invitacion-contenedor">
+
+  <div
+    class="invitacion"
+    [ngClass]="temaSeleccionado"
+    [ngStyle]="obtenerEstiloFondo()"
+  >
+    <h2 class="nombre">Hola, soy {{ invitacionForm.value.nombre }}</h2>
+
+    <div class="imagen">
+      <img *ngIf="imagenPreview" [src]="imagenPreview" alt="Imagen personalizada" />
+    </div>
+
+    <p class="texto">Te invito a celebrar en:</p>
+
+    <div class="salon">{{ invitacionForm.value.salon }}</div>
+
+    <div class="datos">
+      <p>{{ invitacionForm.value.dia }}</p>
+      <p>{{ invitacionForm.value.hora }} a {{ invitacionForm.value.horaHasta }}</p>
+      <p>{{ invitacionForm.value.direccion }}</p>
+    </div>
+
+    <div class="confirmacion" style="font-weight: bold;">
+      No te olvides de confirmar tu asistencia al: {{ invitacionForm.value.telefono }}
+    </div>
+  </div>
+
+  <div class="acciones">
+    <button (click)="volverAEditar()">✏ Volver a editar</button>
+    <button (click)="guardarInvitacion()">💾 Guardar</button>
+  </div>
+
+</div>
