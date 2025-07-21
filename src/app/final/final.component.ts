@@ -18,16 +18,24 @@ export class FinalComponent implements OnInit {
   opcionesFinalesVisible = true;
   yaGuardado = true;
   invitacion: any;
+  modoAdmin= false;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.http.get(`http://localhost:3000/invitaciones/${id}`).subscribe((data: any) => {
-      this.invitacion = data;
-      this.imagenPreview = data.fotoUrl;
-    });
-  }
+  const id = this.route.snapshot.paramMap.get('id');
+
+  // Detectar si el query param 'admin=true' está presente
+  this.route.queryParamMap.subscribe(params => {
+    this.modoAdmin = params.get('admin') === 'true';
+  });
+
+  this.http.get(`http://localhost:3000/invitaciones/${id}`).subscribe((data: any) => {
+    this.invitacion = data;
+    this.imagenPreview = data.fotoUrl;
+  });
+}
+
 
   imprimir() {
     window.print();

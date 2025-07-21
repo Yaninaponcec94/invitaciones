@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="botones-finales">
+  <div class="botones-finales" *ngIf="modoAdmin">
     <button class="boton-accion" (click)="enviarPorWhatsapp()">
   <i class="fab fa-whatsapp"></i> WhatsApp
 </button>
