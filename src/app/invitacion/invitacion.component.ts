@@ -81,7 +81,8 @@ export class InvitacionComponent {
         this.opcionesFinalesVisible = true;
         alert('¡Invitación guardada!');
         // Redirigir a /final con el ID devuelto
-        this.router.navigate(['/final', respuesta.id]);
+        this.router.navigate(['/final', respuesta.id], { queryParams: { admin: true } });
+
       },
       error: () => {
         alert('Error al guardar la invitación.');

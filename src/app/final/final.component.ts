@@ -84,16 +84,22 @@ export class FinalComponent implements OnInit {
     return {};
   }
   enviarPorWhatsapp() {
-  const link = window.location.href;
-  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('¡Te invito! Mirá: ' + link)}`;
+  const url = new URL(window.location.href);
+  url.search = ''; // 🔥 elimina ?admin=true
+  const cleanLink = url.toString();
+
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('¡Te invito! Mirá: ' + cleanLink)}`;
   window.open(whatsappUrl, '_blank');
 }
-
 enviarPorGmail() {
-  const link = window.location.href;
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Invitación&body=${encodeURIComponent('¡Te invito! Mirá la invitación acá: ' + link)}`;
+  const url = new URL(window.location.href);
+  url.search = ''; // 🔥 elimina ?admin=true
+  const cleanLink = url.toString();
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Invitación&body=${encodeURIComponent('¡Te invito! Mirá la invitación acá: ' + cleanLink)}`;
   window.open(gmailUrl, '_blank');
 }
+
 
 }
 
