@@ -5,11 +5,10 @@ import { FinalComponent } from './final/final.component';
 
 export const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'formulario', component: InvitacionComponent},
+  { path: 'formulario', component: InvitacionComponent },
   {
-  path: 'final/:id',
-  loadComponent: () => import('./final/final.component').then(m => m.FinalComponent)
-}
-
-
+    path: 'final/:id',
+    component: FinalComponent,
+    data: { prerender: false }
+  }
 ];
