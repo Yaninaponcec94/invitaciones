@@ -75,7 +75,7 @@ export class InvitacionComponent {
     const datos = this.invitacionForm.value;
     datos.fotoUrl = this.imagenPreview;
 
-    this.http.post<any>('http://localhost:3000/invitaciones', datos).subscribe({
+    this.http.post<any>('https://invitaciones-back-t15x.onrender.com/invitaciones', datos).subscribe({
       next: (respuesta) => {
         this.yaGuardado = true;
         this.opcionesFinalesVisible = true;

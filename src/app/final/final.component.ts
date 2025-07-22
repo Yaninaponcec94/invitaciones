@@ -30,7 +30,8 @@ export class FinalComponent implements OnInit {
     this.modoAdmin = params.get('admin') === 'true';
   });
 
-  this.http.get(`http://localhost:3000/invitaciones/${id}`).subscribe((data: any) => {
+  this.http.get(`https://invitaciones-back-t15x.onrender.com/invitaciones/${id}`)
+.subscribe((data: any) => {
     this.invitacion = data;
     this.imagenPreview = data.fotoUrl;
   });
