@@ -108,49 +108,160 @@
     <ng-container [ngSwitch]="invitacionForm.get('temaColor')?.value">
 
       <ng-container *ngSwitchCase="'rosa'">
-        <div class="form-group">
-          <label for="fondoRosa">Elegí un fondo rosa:</label>
-          <select formControlName="fondoRosa" id="fondoRosa">
-            <option value="fondo.png">Fondo 1</option>
-            <option value="fondo1.jpg">Fondo 2</option>
-            <option value="fondo2.jpg">Fondo 3</option>
-          </select>
-        </div>
-      </ng-container>
+  <div class="form-group">
+    <label>Elegí un fondo rosa:</label>
+    <div class="fondos-opciones">
+      <div class="fondo-opcion" (click)="seleccionarFondoRosa('fondo.png')">
+        <img
+          src="assets/fondos/fondo.png"
+          alt="Fondo 1"
+          [class.seleccionado]="invitacionForm.get('fondoRosa')?.value === 'fondo.png'"
+        />
+        <p>Fondo 1</p>
+      </div>
+      <div class="fondo-opcion" (click)="seleccionarFondoRosa('fondo1.jpg')">
+        <img
+          src="assets/fondos/fondo1.jpg"
+          alt="Fondo 2"
+          [class.seleccionado]="invitacionForm.get('fondoRosa')?.value === 'fondo1.jpg'"
+        />
+        <p>Fondo 2</p>
+      </div>
+      <div class="fondo-opcion" (click)="seleccionarFondoRosa('fondo2.jpg')">
+        <img
+          src="assets/fondos/fondo2.jpg"
+          alt="Fondo 3"
+          [class.seleccionado]="invitacionForm.get('fondoRosa')?.value === 'fondo2.jpg'"
+        />
+        <p>Fondo 3</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
 
-      <ng-container *ngSwitchCase="'celeste'">
-        <div class="form-group">
-          <label for="fondoCeleste">Elegí un fondo celeste:</label>
-          <select formControlName="fondoCeleste" id="fondoCeleste">
-            <option value="fondoceleste.jpg">Fondo 1</option>
-            <option value="fondoceleste1.jpg">Fondo 2</option>
-            <option value="fondoceleste2.jpg">Fondo 3</option>
-          </select>
-        </div>
-      </ng-container>
+<ng-container *ngSwitchCase="'celeste'">
+  <div class="form-group">
+    <label>Elegí un fondo celeste:</label>
+    <div class="fondos-opciones">
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoCeleste')?.setValue('fondoceleste.jpg')">
+        <img
+          src="assets/fondos/fondoceleste.jpg"
+          alt="Fondo 1"
+          [class.seleccionado]="invitacionForm.get('fondoCeleste')?.value === 'fondoceleste.jpg'"
+        />
+        <p>Fondo 1</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoCeleste')?.setValue('fondoceleste1.jpg')">
+        <img
+          src="assets/fondos/fondoceleste1.jpg"
+          alt="Fondo 2"
+          [class.seleccionado]="invitacionForm.get('fondoCeleste')?.value === 'fondoceleste1.jpg'"
+        />
+        <p>Fondo 2</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoCeleste')?.setValue('fondoceleste2.jpg')">
+        <img
+          src="assets/fondos/fondoceleste2.jpg"
+          alt="Fondo 3"
+          [class.seleccionado]="invitacionForm.get('fondoCeleste')?.value === 'fondoceleste2.jpg'"
+        />
+        <p>Fondo 3</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
 
-      <ng-container *ngSwitchCase="'beige'">
-        <div class="form-group">
-          <label for="fondoBeige">Elegí un fondo beige:</label>
-          <select formControlName="fondoBeige" id="fondoBeige">
-            <option value="fondobeige.jpg">Fondo 1</option>
-            <option value="fondobeige1.jpg">Fondo 2</option>
-            <option value="fondobeige2.jpg">Fondo 3</option>
-          </select>
-        </div>
-      </ng-container>
 
-      <ng-container *ngSwitchCase="'dibujitos'">
-        <div class="form-group">
-          <label for="fondoDibujitos">Elegí un fondo beige:</label>
-          <select formControlName="fondoDibujitos" id="fondoDibujitos">
-            <option value="dinosaurio.png">Dinosaurio</option>
-            <option value="toystory.jpg">Toy story</option>
-            <option value="pawpatrol.png">Paw patrol</option>
-            <option value="granjazenon.png">Granja zenon</option>
-          </select>
-        </div>
-      </ng-container>
+    <ng-container *ngSwitchCase="'beige'">
+  <div class="form-group">
+    <label>Elegí un fondo beige:</label>
+    <div class="fondos-opciones">
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoBeige')?.setValue('fondobeige.jpg')">
+        <img
+          src="assets/fondos/fondobeige.jpg"
+          alt="Fondo 1"
+          [class.seleccionado]="invitacionForm.get('fondoBeige')?.value === 'fondobeige.jpg'"
+        />
+        <p>Fondo 1</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoBeige')?.setValue('fondobeige1.jpg')">
+        <img
+          src="assets/fondos/fondobeige1.jpg"
+          alt="Fondo 2"
+          [class.seleccionado]="invitacionForm.get('fondoBeige')?.value === 'fondobeige1.jpg'"
+        />
+        <p>Fondo 2</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoBeige')?.setValue('fondobeige2.jpg')">
+        <img
+          src="assets/fondos/fondobeige2.jpg"
+          alt="Fondo 3"
+          [class.seleccionado]="invitacionForm.get('fondoBeige')?.value === 'fondobeige2.jpg'"
+        />
+        <p>Fondo 3</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngSwitchCase="'dibujitos'">
+  <div class="form-group">
+    <label>Elegí un fondo:</label>
+    <div class="fondos-opciones">
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('dinosaurio.png')">
+        <img
+          src="assets/fondos/dinosaurio.png"
+          alt="Dinosaurio"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'dinosaurio.png'"
+        />
+        <p>Dinosaurio</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('toystory.jpg')">
+        <img
+          src="assets/fondos/toystory.jpg"
+          alt="Toy Story"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'toystory.jpg'"
+        />
+        <p>Toy Story</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('pawpatrol.png')">
+        <img
+          src="assets/fondos/pawpatrol.png"
+          alt="Paw Patrol"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'pawpatrol.png'"
+        />
+        <p>Paw Patrol</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('granjazenon.png')">
+        <img
+          src="assets/fondos/granjazenon.png"
+          alt="Granja de Zenón"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'granjazenon.png'"
+        />
+        <p>Granja de Zenón</p>
+      </div>
+      <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('marvel.jpg')">
+        <img
+          src="assets/fondos/marvel.jpg"
+          alt="marvel"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'marvel.jpg'"
+        />
+        <p>Marvel</p>
+         </div>
+        <div class="fondo-opcion" (click)="invitacionForm.get('fondoDibujitos')?.setValue('princesas.jpg')">
+        <img
+          src="assets/fondos/princesas.jpg"
+          alt="princesas"
+          [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'princesas.jpg'"
+        />
+        <p>Princesas</p>
+      </div>
+     
+    </div>
+  </div>
+</ng-container>
+
+
 
     </ng-container>
 

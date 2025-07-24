@@ -150,6 +150,9 @@ irAFinal(): void {
   this.router.navigate(['/final']);
 }
 
+seleccionarFondoRosa(fondo: string): void {
+  this.invitacionForm.get('fondoRosa')?.setValue(fondo);
+}
 
 
 }

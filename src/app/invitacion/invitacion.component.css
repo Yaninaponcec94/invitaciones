@@ -302,6 +302,37 @@ p{
 }
 
 
+.fondos-opciones {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.fondo-opcion {
+  text-align: center;
+  cursor: pointer;
+}
+
+.fondo-opcion img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  transition: border 0.2s ease-in-out;
+}
+
+.fondo-opcion img.seleccionado {
+  border-color: #007bff;
+}
+
+.fondo-opcion p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
 
 
 
