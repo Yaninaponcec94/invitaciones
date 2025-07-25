@@ -28,6 +28,7 @@
   z-index: 1;
   position: relative;
   margin-left:40px ;
+  margin-top: 90px;
 }
 .derecha {
   display: flex;
@@ -92,4 +93,69 @@
   border-color: #ffe6f7; /* un blanco muy suave tipo rosado */
   box-shadow: 0 0 15px rgba(255, 0, 85, 0.5); /* glow suave */
   transform: scale(1.03);
+}
+
+.imagenes-portada {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* RESPONSIVE AJUSTADO A TU DISEÑO */
+@media screen and (max-width: 768px) {
+  .imagenes-portada {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap; /* <- esto fuerza que no se salte a otra fila */
+    gap: 10px;
+  }
+  .img-formulario {
+    width: 140px;
+    height: auto;
+    margin-bottom: 0;
+    margin-top: 40px; 
+    width: 140px;
+    height: auto;
+    margin-bottom: 0;
+  } 
+
+  .img-invitacion {
+    width: 120px;
+    margin: 0;
+  }
+
+  
+  .izquierda {
+    margin-right: 10px;
+  }
+  .derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1px;
+  }
+
+  
+
+  .texto-portada {
+  margin-left: 0;
+  margin-top: 30px;
+  text-align: center;
+}
+
+  .texto-portada h1 {
+  font-size: 20px;
+  margin-right: 0;
+}
+
+.texto-portada button {
+  margin-right: 0;
+  margin-top: 10px;
+}
+
 }
