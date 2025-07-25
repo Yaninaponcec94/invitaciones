@@ -104,7 +104,15 @@
 }
 
 /* RESPONSIVE AJUSTADO A TU DISEÑO */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (max-height: 800px){
+  .portada {
+  min-height: 100vh;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: scroll;
+}
+
   .imagenes-portada {
     display: flex;
     flex-direction: row;
