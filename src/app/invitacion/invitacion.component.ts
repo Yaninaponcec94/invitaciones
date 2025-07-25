@@ -19,7 +19,7 @@ export class InvitacionComponent {
   modo: 'edicion' | 'preview' = 'edicion';
   opcionesFinalesVisible = false;
   yaGuardado = false;
-
+  invitacion: any;
 
   constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
 
@@ -152,6 +152,12 @@ irAFinal(): void {
 
 seleccionarFondoRosa(fondo: string): void {
   this.invitacionForm.get('fondoRosa')?.setValue(fondo);
+}
+
+getGoogleMapsUrl(): string {
+  const direccion = this.invitacionForm?.value?.direccion;
+  if (!direccion) return '';
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(direccion);
 }
 
 

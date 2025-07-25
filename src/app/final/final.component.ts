@@ -54,6 +54,7 @@ export class FinalComponent implements OnInit {
     const fondoRosa = this.invitacion?.fondoRosa;
     const fondoCeleste = this.invitacion?.fondoCeleste;
     const fondoBeige = this.invitacion?.fondoBeige;
+    const fondoDibujitos = this.invitacion?.fondoDibujitos;
 
     if (tema === 'rosa' && fondoRosa) {
       return {
@@ -81,6 +82,14 @@ export class FinalComponent implements OnInit {
         'background-repeat': 'no-repeat'
       };
     }
+    if (tema === 'dibujitos' && fondoDibujitos) {
+    return {
+    'background-image': `url('assets/fondos/${fondoDibujitos}')`,
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat'
+      };
+    }
 
     return {};
   }
@@ -99,6 +108,11 @@ enviarPorGmail() {
 
   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Invitación&body=${encodeURIComponent('¡Te invito! Mirá la invitación acá: ' + cleanLink)}`;
   window.open(gmailUrl, '_blank');
+}
+
+get googleMapsLink(): string {
+  const direccion = this.invitacion?.direccion || '';
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(direccion);
 }
 
 

@@ -71,7 +71,7 @@
       <input
         type="text"
         formControlName="direccion"
-        placeholder="Dirección"
+        placeholder="Dirección exacta n°, localidad"
         [class.invalido]="esCampoInvalido('direccion')"
       />
       <div class="error" *ngIf="esCampoInvalido('direccion')">
@@ -296,6 +296,15 @@
     <div class="confirmacion" style="font-weight: bold;">
       No te olvides de confirmar tu asistencia al: {{ invitacionForm.value.telefono }}
     </div>
+    
+    <div *ngIf="invitacionForm.value.direccion" class="link-ubicacion">
+      <a [href]="getGoogleMapsUrl()" target="_blank" rel="noopener noreferrer">
+        📍 Ver ubicación en Google Maps
+      </a>
+    </div>
+
+
+
   </div>
 
   <div class="acciones">

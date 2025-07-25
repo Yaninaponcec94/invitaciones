@@ -21,10 +21,22 @@
       <p>{{ invitacion.hora }} a {{ invitacion.horaHasta }}</p>
       <p>{{ invitacion.direccion }}</p>
     </div>
+    
 
     <div class="confirmacion" style="font-weight: bold;">
       No te olvides de confirmar tu asistencia al: {{ invitacion.telefono }}
     </div>
+
+    <div class="link-ubicacion" *ngIf="invitacion?.direccion">
+      <a
+        [href]="googleMapsLink"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📍 Ubicación Google Maps aquí
+      </a>
+    </div>
+
   </div>
 
   <div class="botones-finales" *ngIf="modoAdmin">
@@ -38,9 +50,7 @@
   <button class="boton-accion" (click)="imprimir()">
     📄 Imprimir
   </button>
-  <button class="boton-accion" (click)="descargarPDF()">
-    📥 Descargar como PDF
-  </button>
+  
   
 </div>
 
