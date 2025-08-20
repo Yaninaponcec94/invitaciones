@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class InvitacionComponent {
   invitacionForm: FormGroup;
   imagenPreview: string | ArrayBuffer | null = null;
-  modo: 'edicion' | 'preview' = 'edicion';
+
   opcionesFinalesVisible = false;
   yaGuardado = false;
   invitacion: any;
@@ -53,19 +53,6 @@ export class InvitacionComponent {
       };
       reader.readAsDataURL(fileInput.files[0]);
     }
-  }
-
-  irAPreview() {
-  if (this.invitacionForm.invalid || !this.imagenPreview) {
-    alert('Por favor, completá todos los campos y cargá una imagen antes de continuar.');
-    return;
-  }
-
-  this.modo = 'preview';
-}
-
-  volverAEditar() {
-    this.modo = 'edicion';
   }
 
   guardarInvitacion() {

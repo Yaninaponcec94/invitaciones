@@ -1,24 +1,21 @@
-.formulario {
-  max-width: 300px;
-  margin: 0 auto;
+.editor-preview {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.invitacion-contenedor {
-  background-color: rgb(252, 251, 251);
+  justify-content: center; /* 👈 arranca desde la izquierda */
+  align-items: flex-start;     /* alineados arriba */
+  gap: 70px;                   /* espacio entre form e invitación */
+  margin-top: 30px;
 }
 
 .formulario {
-  max-width: 400px;
-  margin: 40px auto;
+  flex: 0 0 450px;         
+  
   padding: 20px;
   background-color: #fdfcfc;
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  gap: 10px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -40,7 +37,6 @@
   display: block;
 }
 
-
 /* Centrar el botón */
 .formulario button {
   align-self: center;
@@ -59,6 +55,7 @@
 .formulario button:hover {
   background-color: #0056b3;
 }
+
 .error {
   color: red;
   font-size: 12px;
@@ -66,80 +63,22 @@
   margin-bottom: 10px;
   padding-left: 4px;
 }
-p{
+
+p {
   font-size: 20px;
 }
 
-@media print {
-  body * {
-    visibility: hidden;
-  }
-
-  .invitacion-contenedor, .invitacion-contenedor * {
-    visibility: visible;
-  }
-
-  .acciones {
-    display: none;
-  }
-
-  .invitacion-contenedor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .formulario {
-    max-width: 100%;
-    background-color: #f5f1f1ea;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-
-  .formulario h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .formulario input,
-  .formulario select,
-  .formulario input[type="file"] {
-    font-size: 13px;
-    padding: 8px;
-    margin-bottom: 12px;
-    border-radius: 6px;
-  }
-
-  .formulario label {
-    font-size: 13px;
-    margin-bottom: 4px;
-  }
-
-  .formulario button {
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  .error {
-    font-size: 11px;
-    margin-top: -6px;
-    margin-bottom: 8px;
-  }
-}
+/* PREVIEW */
 .invitacion-contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(252, 251, 251);
 }
 
 .invitacion {
-  width: 400px;
+  width: 450px;
+  min-height: 600px;
   border: 4px solid black;
   border-radius: 15px;
   padding: 20px;
@@ -147,6 +86,15 @@ p{
   font-family: Arial, sans-serif;
   background-color: white;
 }
+.confirmacion {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.7); /* 👈 fondo blanco transparente */
+}
+
 .invitacion.rosa {
   background-color: #f9d4d0; /* rosa coral claro */
   color: #5e2b2b;
@@ -171,12 +119,12 @@ p{
   color: #2d3e50;
 }
 
-
 .invitacion.beige {
   background-color: #f5f3ea;
   border-color: #d6cbb2;
   color: #4d4d4d;
 }
+
 .invitacion.oscuro {
   background-color: #121212;
   color: #ffffff;
@@ -200,14 +148,13 @@ p{
 .datos,
 .confirmacion {
   font-family: 'Poppins', sans-serif;
-
 }
 
 .imagen img {
-  width: 230px;         /* asegurate de que ancho y alto sean iguales */
+  width: 230px;
   height: 230px;
   object-fit: cover;
-  border-radius: 50%;   /* 👈 esto la hace redonda */
+  border-radius: 50%;
   margin-bottom: 15px;
   display: block;
   margin-left: auto;
@@ -215,7 +162,6 @@ p{
 }
 
 .salon {
-  
   padding: 10px;
   display: inline-block;
   font-weight: bold;
@@ -223,7 +169,6 @@ p{
   margin-top: 0.5px;
   font-size: 36px;
   font-family: 'Dancing Script', cursive;
-
 }
 
 .datos p {
@@ -240,65 +185,24 @@ p{
 
 .acciones {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;   /* 👈 centra el botón */
   margin-top: 20px;
 }
 
-@media screen and (max-width: 480px) {
-  .invitacion {
-    width: 90%;
-    max-width: 90%;
-    padding: 15px;
-    box-sizing: border-box;
-    margin: 0 10px;
-  }
-
-  .nombre {
-    font-size: 32px;
-  }
-
-  .salon {
-    font-size: 28px;
-  }
-
-  .confirmacion {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .imagen img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .acciones {
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 0 10px;
-}
-
 .acciones button {
-  flex: 1;
-  font-size: 14px;
-  padding: 10px;
-  background-color: #007bff;
+  background-color: #0dcaf0; /* 👈 celeste */
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .acciones button:hover {
-  background-color: #0056b3;
-}
-
-
-  p {
-    font-size: 16px;
-  }
+  background-color: #0bb5d4; /* un celeste más oscuro al pasar el mouse */
 }
 
 
@@ -347,4 +251,123 @@ p{
 
 .link-ubicacion a:hover {
   text-decoration: underline;
+}
+
+/* ----------- MEDIA QUERIES ----------- */
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .invitacion-contenedor, .invitacion-contenedor * {
+    visibility: visible;
+  }
+
+  .acciones {
+    display: none;
+  }
+
+  .invitacion-contenedor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .formulario {
+    max-width: 100%;
+    background-color: #f5f1f1ea;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .formulario h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario input[type="file"] {
+    font-size: 13px;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
+
+  .formulario label {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .formulario button {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .error {
+    font-size: 11px;
+    margin-top: -6px;
+    margin-bottom: 8px;
+  }
+
+  .invitacion {
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0 10px;
+  }
+
+  .nombre {
+    font-size: 32px;
+  }
+
+  .salon {
+    font-size: 28px;
+  }
+
+  .confirmacion {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .imagen img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .acciones {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .acciones button {
+    flex: 1;
+    font-size: 14px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .acciones button:hover {
+    background-color: #0056b3;
+  }
+
+  p {
+    font-size: 16px;
+  }
 }

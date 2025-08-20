@@ -1,4 +1,5 @@
-<div *ngIf="modo === 'edicion'" class="formulario">
+<div class="editor-preview">
+  <div class="formulario">
   <form [formGroup]="invitacionForm" class="form-box">
     <h2>Crear Invitación</h2>
 
@@ -254,23 +255,19 @@
           alt="princesas"
           [class.seleccionado]="invitacionForm.get('fondoDibujitos')?.value === 'princesas.jpg'"
         />
-        <p>Princesas</p>
-      </div>
+          <p>Princesas</p>
+        </div>
      
+      </div>
     </div>
-  </div>
-</ng-container>
-
-
-
     </ng-container>
-
-    <button (click)="irAPreview()">Previsualizar invitación</button>
+    </ng-container>    
   </form>
 </div>
 
 <!-- PREVISUALIZACIÓN -->
-<div *ngIf="modo === 'preview'" class="invitacion-contenedor">
+  <div class="columna-derecha">
+<div class="invitacion-contenedor">
 
   <div
     class="invitacion"
@@ -306,10 +303,12 @@
 
 
   </div>
+  </div>
 
   <div class="acciones">
-    <button (click)="volverAEditar()">✏ Volver a editar</button>
+    
     <button (click)="guardarInvitacion()">💾 Guardar</button>
   </div>
 
+</div>
 </div>
